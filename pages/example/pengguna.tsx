@@ -81,17 +81,6 @@ function Pengguna() {
 
   // on page change, load new sliced data
   // here you would make another server request for new data
-  // useEffect(() => {
-  //   setDataTable1(
-  //     response.slice(
-  //       (pageTable1 - 1) * resultsPerPage,
-  //       pageTable1 * resultsPerPage
-  //     )
-  //   );
-  // }, [pageTable1]);
-
-  // on page change, load new sliced data
-  // here you would make another server request for new data
   useEffect(() => {
     setDataTable2(
       response2.slice(
@@ -124,14 +113,14 @@ function Pengguna() {
 
       {/* Table Pengguna */}
       <SectionTitle>Daftar Pengguna</SectionTitle>
-      <TableContainer className="px-4 mb-8">
+      <TableContainer className="h-full px-4 mb-8">
         <Table>
           <TableHeader>
             <tr>
               <TableCell>Nama</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Status</TableCell>
-              <TableCell>Actions</TableCell>
+              <TableCell className="text-center">Aksi</TableCell>
             </tr>
           </TableHeader>
           <TableBody>
@@ -156,14 +145,14 @@ function Pengguna() {
                   <Badge type={user.status}>{user.status}</Badge>
                 </TableCell>
                 <TableCell>
-                  <div className="flex items-center space-x-4">
+                  <div className="flex md:w-10 items-center space-x-2">
                     <Button
                       layout="link"
                       size="small"
                       aria-label="Edit"
                       onClick={() => openEditModal(user)}
                     >
-                      <EditIcon className="w-5 h-5" aria-hidden="true" />
+                      <EditIcon className="md:w-4 md:h-4" aria-hidden="true" />
                     </Button>
                     <Button
                       layout="link"
@@ -174,7 +163,7 @@ function Pengguna() {
                         setIsDeleteModalOpen(true);
                       }}
                     >
-                      <TrashIcon className="w-5 h-5" aria-hidden="true" />
+                      <TrashIcon className="md:w-4 md:h-4" aria-hidden="true" />
                     </Button>
                   </div>
                 </TableCell>

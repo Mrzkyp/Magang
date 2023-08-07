@@ -149,7 +149,7 @@ function Header() {
           </li>
         </ul>
       </div>
-    </header>
+    </header >
   );
 }
 

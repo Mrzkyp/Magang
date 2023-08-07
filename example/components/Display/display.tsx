@@ -28,7 +28,7 @@ export default function Display() {
           <div className="flex flex-col gap-y-2 px-3 md:w-1/3 md:h-3/4 text-center">
             <Card
               colored
-              className="text-white bg-blue-500"
+              className="h-full text-white bg-blue-500"
             >
               <CardBody>
                 <p className="text-left text-1xl mb-2 font-semibold">
@@ -41,14 +41,14 @@ export default function Display() {
                 </p>
               </CardBody>
             </Card>
-            <Card colored className="text-black bg-blue-500">
+            <Card colored className="h-full text-black bg-blue-500">
               <CardBody>
                 <p className="text-center text-8xl">
                   20.00 WIB
                 </p>
               </CardBody>
             </Card>
-            <Card colored className="text-white bg-green-500">
+            <Card colored className="h-full text-white bg-green-500">
               <CardBody>
                 <p className="text-center text-3xl">
                   Antrian Selanjutnya

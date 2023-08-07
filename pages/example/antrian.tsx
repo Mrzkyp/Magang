@@ -26,6 +26,7 @@ import {
 import { useEffect, useState } from "react";
 import response, { ITableData } from "utils/demo/tableData";
 import SectionTitle from "example/components/Typography/SectionTitle";
+import Tabel from "example/components/Table/table";
 
 const response2 = response.concat([]);
 
@@ -53,7 +54,7 @@ function Antrian() {
         <div className="gap-5 items-center">
           <Card colored className="h-2/4 mb-6 text-white bg-blue-600">
             <CardBody>
-              <p className="text-3xl text-center mb-4 font-bold">
+              <p className="text-2xl text-center mb-4 font-bold">
                 Jumlah Antrian
               </p>
               <p className="text-5xl text-center">36</p>
@@ -61,7 +62,7 @@ function Antrian() {
           </Card>
           <Card colored className="gap-5 text-white bg-blue-600">
             <CardBody>
-              <p className="text-center text-3xl mb-4 font-bold">
+              <p className="text-center text-2xl mb-4 font-bold">
                 Sisa Antrian
               </p>
               <p className="text-center text-5xl">25</p>
@@ -102,148 +103,18 @@ function Antrian() {
 
       {/* Refresh */}
       <div className="md:grid md:px-4 md:mb-4 xl:grid-cols-6">
-        <Button layout="link">
+        <Button className="bg-blue-500 hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300 text-white text-xl">
           <RoundIcon
             icon={PeopleIcon}
-            iconColorClass="text-green-500 dark:text-green-100"
-            bgColorClass="bg-green-100 dark:bg-green-500"
-            className="md:mr-0"
-          />{" "}
+            iconColorClass="text-green-500"
+            bgColorClass="dark:bg-green-500"
+            className="mr-0" />
           Refresh
         </Button>
       </div>
 
       {/* card data */}
-      <div className="px-1">
-        <div className="flex mx-2">
-          <div className="w-2/3 px-2">
-            <div className="w-[200px] px-2 py-4">
-              <Card>
-                <div className="mb-4 font-semibold">
-                  <p className="text-center text-white">Antrian Terambil</p>
-                </div>
-                <div>
-                  <TableContainer className="mb-8">
-                    <Table>
-                      <TableHeader>
-                        <tr>
-                          <TableCell>No Antrian</TableCell>
-                          <TableCell>Aksi</TableCell>
-                        </tr>
-                      </TableHeader>
-                      <TableBody>
-                        <TableCell>
-                          <div className="flex items-center space-x-4">
-                            <div className="ml-3">
-                              <div className="text-sm font-medium text-blue-900">
-                                #1
-                              </div>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <Button
-                            layout="link"
-                            size="small"
-                            aria-label="Edit"
-                            // onClick={() => openEditModal(user)}
-                          >
-                            <EditIcon className="w-5 h-5" aria-hidden="true" />
-                          </Button>
-                        </TableCell>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </div>
-              </Card>
-            </div>
-          </div>
-          <div className="w-2/3 px-2">
-            <div className="w-[400px] px-2 py-4">
-              <Card>
-                <div className="mb-4 font-semibold">
-                  <p className="text-center text-white">Antrian Terlewati</p>
-                </div>
-                <div>
-                  <TableContainer className="mb-8">
-                    <Table>
-                      <TableHeader>
-                        <tr>
-                          <TableCell>No Antrian</TableCell>
-                          <TableCell>Aksi</TableCell>
-                        </tr>
-                      </TableHeader>
-                      <TableBody>
-                        <TableCell>
-                          <div className="flex items-center space-x-4">
-                            <div className="ml-3">
-                              <div className="text-sm font-medium text-blue-900">
-                                #1
-                              </div>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <Button
-                            layout="link"
-                            size="small"
-                            aria-label="Edit"
-                            // onClick={() => openEditModal(user)}
-                          >
-                            <EditIcon className="w-5 h-5" aria-hidden="true" />
-                          </Button>
-                        </TableCell>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </div>
-              </Card>
-            </div>
-          </div>
-          <div className="w-2/3 px-2">
-            <div className="w-[400px] px-2 py-4">
-              <Card>
-                <div className="mb-4 font-semibold">
-                  <p className="text-center text-white">Status Antrian</p>
-                </div>
-                <div>
-                  <TableContainer className="mb-8">
-                    <Table>
-                      <TableHeader>
-                        <tr>
-                          <TableCell>No Antrian</TableCell>
-                          <TableCell>Aksi</TableCell>
-                        </tr>
-                      </TableHeader>
-                      <TableBody>
-                        <TableCell>
-                          <div className="flex items-center space-x-4">
-                            <div className="ml-3">
-                              <div className="text-sm font-medium text-blue-900">
-                                #1
-                              </div>
-                            </div>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <Button
-                            layout="link"
-                            size="small"
-                            aria-label="Edit"
-                            // onClick={() => openEditModal(user)}
-                          >
-                            <EditIcon className="w-5 h-5" aria-hidden="true" />
-                          </Button>
-                        </TableCell>
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Tabel />
     </Layout>
   );
 }
