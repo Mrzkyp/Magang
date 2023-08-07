@@ -88,26 +88,26 @@ function Antrian() {
             </CardBody>
           </Card>
         </div>
-        <div className="gap-50 flex items-center">
+        <div className="md:gap-50 md:flex items-center">
           <Card colored className=" text-white bg-blue-600">
             <CardBody>
-              <p className="text-center text-3xl mb-4 font-semibold">
+              <p className="text-center text-3xl md:mb-4 font-semibold">
                 Selamat Datang
               </p>
-              <p className="text-center text-6xl">Siapa ini??</p>
+              <p className="text-center text-6xl">Dzikri</p>
             </CardBody>
           </Card>
         </div>
       </div>
 
       {/* Refresh */}
-      <div className="grid px-4 mb-4 xl:grid-cols-6">
+      <div className="md:grid md:px-4 md:mb-4 xl:grid-cols-6">
         <Button layout="link">
           <RoundIcon
             icon={PeopleIcon}
             iconColorClass="text-green-500 dark:text-green-100"
             bgColorClass="bg-green-100 dark:bg-green-500"
-            className="mr-0"
+            className="md:mr-0"
           />{" "}
           Refresh
         </Button>
