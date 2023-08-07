@@ -109,7 +109,7 @@ function Antrian() {
             bgColorClass="bg-green-100 dark:bg-green-500"
             className="md:mr-0"
           />{" "}
-          loading
+          Refresh
         </Button>
       </div>
 
