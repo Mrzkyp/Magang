@@ -24,12 +24,14 @@ import MoonIcon from "./moon.svg";
 import SunIcon from "./sun.svg";
 import BellIcon from "./bell.svg";
 import MenuIcon from "./menu.svg";
+import SuccessIcon from "./success.svg";
 import DropdownIcon from "./dropdown.svg";
 import OutlinePersonIcon from "./outlinePerson.svg";
 import OutlineCogIcon from "./outlineCog.svg";
 import OutlineLogoutIcon from "./outlineLogout.svg";
 
 export {
+  SuccessIcon,
   ButtonsIcon,
   CardsIcon,
   ChartsIcon,

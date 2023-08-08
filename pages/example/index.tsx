@@ -1,38 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Doughnut, Line } from "react-chartjs-2";
 
-import CTA from "example/components/CTA";
 import InfoCard from "example/components/Cards/InfoCard";
 import ChartCard from "example/components/Chart/ChartCard";
-import ChartLegend from "example/components/Chart/ChartLegend";
 import PageTitle from "example/components/Typography/PageTitle";
 import RoundIcon from "example/components/RoundIcon";
 import Layout from "example/containers/Layout";
 import response, { ITableData } from "utils/demo/tableData";
-import { ChatIcon, CartIcon, MoneyIcon, PeopleIcon } from "icons";
+import { PeopleIcon } from "icons";
 
 import {
-  TableBody,
-  TableContainer,
-  Table,
-  TableHeader,
-  TableCell,
-  TableRow,
-  TableFooter,
-  Avatar,
-  Badge,
-  Pagination,
   Card,
   CardBody,
   Button,
 } from "@roketid/windmill-react-ui";
-
-import {
-  doughnutOptions,
-  lineOptions,
-  doughnutLegends,
-  lineLegends,
-} from "utils/demo/chartsData";
 
 import {
   Chart,
@@ -45,8 +25,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import SectionTitle from "example/components/Typography/SectionTitle";
-import Antrian from "./antrian";
+
 import Link from "next/link";
 
 function Dashboard() {
@@ -154,7 +133,7 @@ function Dashboard() {
           <div className="flex">
             <img
               className="h-full w-full rounded-full"
-              src="assets/img/Gear5.jpeg"
+              src="/assets/img/Gear5.jpeg"
               alt=""
             />
           </div>
@@ -163,7 +142,7 @@ function Dashboard() {
           <div className="flex">
             <img
               className="h-full w-full rounded-full"
-              src="assets/img/Gear5.jpeg"
+              src="/assets/img/Gear5.jpeg"
               alt=""
             />
           </div>
@@ -172,7 +151,7 @@ function Dashboard() {
           <div className="flex">
             <img
               className="h-full w-full rounded-full"
-              src="assets/img/Gear5.jpeg"
+              src="/assets/img/Gear5.jpeg"
               alt=""
             />
           </div>
@@ -181,7 +160,7 @@ function Dashboard() {
           <div className="flex">
             <img
               className="h-full w-full rounded-full"
-              src="assets/img/Gear5.jpeg"
+              src="/assets/img/Gear5.jpeg"
               alt=""
             />
           </div>
@@ -190,7 +169,7 @@ function Dashboard() {
           <div className="flex">
             <img
               className="h-full w-full rounded-full"
-              src="assets/img/Gear5.jpeg"
+              src="/assets/img/Gear5.jpeg"
               alt=""
             />
           </div>
@@ -199,7 +178,7 @@ function Dashboard() {
           <div className="flex">
             <img
               className="h-full w-full rounded-full"
-              src="assets/img/Gear5.jpeg"
+              src="/assets/img/Gear5.jpeg"
               alt=""
             />
           </div>
