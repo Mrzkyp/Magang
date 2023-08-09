@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -6,6 +6,14 @@ import { GithubIcon, TwitterIcon } from 'icons'
 import { Input, Label, Button, WindmillContext } from '@roketid/windmill-react-ui'
 
 function CrateAccount() {
+  const [selectedRole, setSelectedRole] = useState("admin");
+
+  const handleRoleChange = (event: {
+    target: { value: React.SetStateAction<string> };
+  }) => {
+    setSelectedRole(event.target.value);
+  };
+
   const { mode } = useContext(WindmillContext)
   const imgSource = mode === 'dark' ? '/assets/img/create-account-office-dark.jpeg' : '/assets/img/create-account-office.jpeg'
 
@@ -29,7 +37,7 @@ function CrateAccount() {
               </h1>
               <Label>
                 <span>Email</span>
-                <Input className="mt-1" type="email" placeholder="john@doe.com" />
+                <Input className="mt-1" type="email" placeholder="Email" />
               </Label>
               <Label className="mt-4">
                 <span>Password</span>
@@ -39,34 +47,29 @@ function CrateAccount() {
                 <span>Confirm password</span>
                 <Input className="mt-1" placeholder="***************" type="password" />
               </Label>
-
-              <Label className="mt-6" check>
-                <Input type="checkbox" />
-                <span className="ml-2">
-                  I agree to the <span className="underline">privacy policy</span>
-                </span>
+              <Label className="mt-4">
+                <span>Loket</span>
+                <select
+                  value={selectedRole}
+                  onChange={handleRoleChange}
+                  className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm rounded-md"
+                >
+                  <option value="loket1">Loket 1</option>
+                  <option value="loket2">Loket 2</option>
+                  <option value="loket3">Loket 3</option>
+                </select>
               </Label>
 
               <Link
-                  href='/example/login'
-                  passHref={true}
-                >
+                href='/example/login'
+                passHref={true}
+              >
                 <Button block className="mt-4">
                   Create account
                 </Button>
               </Link>
 
               <hr className="my-8" />
-
-              <Button block layout="outline">
-                <GithubIcon className="w-4 h-4 mr-2" aria-hidden="true" />
-                Github
-              </Button>
-              <Button block className="mt-4" layout="outline">
-                <TwitterIcon className="w-4 h-4 mr-2" aria-hidden="true" />
-                Twitter
-              </Button>
-
               <p className="mt-4">
                 <Link href="/example/login">
                   <a

@@ -1,73 +1,69 @@
-import React, { useState } from "react";
-import {
-  Button,
-  Input,
-  Label,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Select,
-} from "@roketid/windmill-react-ui";
-import { ITableData } from "utils/demo/tableData";
+import { Button, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader, Select } from "@roketid/windmill-react-ui";
+import { EditIcon } from "icons";
+import React from "react";
+import { useState } from "react";
 
-function ModalComponent() {
-  //Edit Pengguna
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [selectedUser, setSelectedUser] = useState<ITableData | null>(null);
+export default function EditModal() {
+  const [modalDefaultOpen, setModalDefaultOpen] = React.useState(false);
+  const [modalNotificationOpen, setModalNotificationOpen] = React.useState(
+    false
+  );
+  const [modalFormOpen, setModalFormOpen] = React.useState(false);
 
-  // Fungsi untuk membuka modal "Edit" dan mengatur data pengguna yang akan diedit
-  const openEditModal = (user: ITableData) => {
-    setSelectedUser(user);
-    setIsEditModalOpen(true);
-  };
 
-  // Fungsi untuk menutup modal "Edit"
-  const closeEditModal = () => {
-    setIsEditModalOpen(false);
-  };
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
-  //edit Pengguna
-  const saveEdit = () => {
-    // Implementasi aksi menyimpan perubahan disini, misalnya dengan memanggil fungsi saveData(selectedUser)
-    alert(`Data dengan ID ${selectedUser?.id} telah diubah`);
-    closeEditModal();
-  };
+  // function openModal() {
+  //   setIsModalOpen(true);
+  // }
+
+  // function closeModal() {
+  //   setIsModalOpen(false);
+  // }
 
   return (
-    <div className="mt-4">
-      <form>
-        <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-          <Modal isOpen={isEditModalOpen} onClose={closeEditModal}>
-            <ModalBody>
-              {selectedUser && (
-                <div className="px-4 py-3 mb-8 bg-white rounded-lg shadow-md dark:bg-gray-800">
-                  <Label>
-                    <span>Nama</span>
-                    <Input className="mt-1" value={selectedUser.name} />
-                  </Label>
-                  <Label className="mt-4">
-                    <span>Email</span>
-                    <Input className="mt-1" value={selectedUser.email} />
-                  </Label>
-                  {/* Tambahkan input dan label lain sesuai dengan data pengguna yang akan di-edit */}
-                </div>
-              )}
-            </ModalBody>
-            <ModalFooter>
-              <Button layout="outline" onClick={closeEditModal}>
-                Batal
-              </Button>
-              <Button layout="primary" onClick={saveEdit}>
-                Simpan
-              </Button>
-            </ModalFooter>
-          </Modal>
-          ;
-        </div>
-      </form>
+    <div className="md:px-4 md:py-3">
+      <Button
+        layout="link"
+        size="small"
+        aria-label="Edit"
+        onClick={() => setModalDefaultOpen(true)}
+      >
+        <EditIcon className="md:w-4 md:h-4" aria-hidden="true" />
+      </Button>
+      <Modal isOpen={modalDefaultOpen} onClose={() => setModalDefaultOpen(false)}>
+        <ModalHeader>Edit Pengguna</ModalHeader>
+        <ModalBody>
+          <Label className="mt-4">
+            <span>Nama Lengkap</span>
+            <Input className="mt-1" placeholder="Nama Lengkap" />
+          </Label>
+          <Label className="mt-4">
+            <span>Email</span>
+            <Input className="mt-1" placeholder="Email" />
+          </Label>
+          <Label className="mt-4">
+            <span>Loket</span>
+            <Select className="mt-1">
+              <option value="loket1">Loket 1</option>
+              <option value="loket2">Loket 2</option>
+              <option value="loket3">Loket 3</option>
+              <option value="loket4">Loket 4</option>
+            </Select>
+          </Label>
+          <Label className="mt-4">
+            <input className="mt-1" type="file" />
+          </Label>
+        </ModalBody>
+        <ModalFooter>
+          <Button layout="outline" onClick={() => setModalDefaultOpen(false)}>
+            Cancel
+          </Button>
+          <Button layout="primary" onClick={() => setModalDefaultOpen(true)}>
+            Accept
+          </Button>
+        </ModalFooter>
+      </Modal>
     </div>
-  );
+  )
 }
-
-export default ModalComponent;

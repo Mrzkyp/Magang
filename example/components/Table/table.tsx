@@ -103,8 +103,8 @@ export default function Tabel() {
     );
   }, [pageTable2]);
   return (
-    <div className="flex md:ml-0 md:px-3">
-      <div className="flex flex-col md:w-3/5 px-1">
+    <div className="flex xl:ml-0 xl:px-3">
+      <div className="flex flex-col xl:w-3/5 px-1">
         <Card colored className="h-full text-white bg-blue-200">
           <CardBody>
             <p className="text-center text-black">Antrian Terambil</p>
@@ -126,14 +126,14 @@ export default function Tabel() {
                           </div>
                         </TableCell>
                         <TableCell>
-                          <div className="flex md:w-24 items-center space-x-2">
+                          <div className="flex xl:w-24 items-center space-x-2">
                             <Button
                               layout="link"
                               size="small"
                               aria-label="Edit"
                             // onClick={() => openEditModal(user)}
                             >
-                              <EditIcon className="md:w-4 md:h-4" aria-hidden="true" />
+                              <EditIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
                             </Button>
                             <Button
                               layout="link"
@@ -144,7 +144,7 @@ export default function Tabel() {
                                 // setIsDeleteModalOpen(true);
                               }}
                             >
-                              <TrashIcon className="md:w-4 md:h-4" aria-hidden="true" />
+                              <TrashIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
                             </Button>
                             <Button
                               layout="link"
@@ -152,7 +152,7 @@ export default function Tabel() {
                               aria-label="Edit"
                             // onClick={() => openEditModal(user)}
                             >
-                              <EditIcon className="md:w-4 md:h-4" aria-hidden="true" />
+                              <EditIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
                             </Button>
                           </div>
                         </TableCell>
@@ -165,7 +165,7 @@ export default function Tabel() {
           </CardBody>
         </Card>
       </div>
-      <div className="flex flex-col md:w-3/5 px-1">
+      <div className="flex flex-col xl:w-3/5 px-1">
         <Card colored className="h-full text-white bg-blue-200">
           <CardBody>
             <p className="text-center text-black">Antrian Terlewati</p>
@@ -187,14 +187,14 @@ export default function Tabel() {
                           </div>
                         </TableCell>
                         <TableCell>
-                          <div className="flex md:w-24 items-center space-x-2">
+                          <div className="flex xl:w-24 items-center space-x-2">
                             <Button
                               layout="link"
                               size="small"
                               aria-label="Edit"
                             // onClick={() => openEditModal(user)}
                             >
-                              <EditIcon className="md:w-4 md:h-4" aria-hidden="true" />
+                              <EditIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
                             </Button>
                             <Button
                               layout="link"
@@ -205,7 +205,7 @@ export default function Tabel() {
                                 // setIsDeleteModalOpen(true);
                               }}
                             >
-                              <TrashIcon className="md:w-4 md:h-4" aria-hidden="true" />
+                              <TrashIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
                             </Button>
                             <Button
                               layout="link"
@@ -216,7 +216,7 @@ export default function Tabel() {
                                 // setIsDeleteModalOpen(true);
                               }}
                             >
-                              <TrashIcon className="md:w-4 md:h-4" aria-hidden="true" />
+                              <TrashIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
                             </Button>
                           </div>
                         </TableCell>
@@ -229,7 +229,7 @@ export default function Tabel() {
           </CardBody>
         </Card>
       </div>
-      <div className="flex flex-col md:w-3/5 px-1">
+      <div className="flex flex-col xl:w-3/5 px-1">
         <Card colored className="h-full text-white bg-blue-200">
           <CardBody>
             <p className="text-center text-black">Status Antrian</p>
@@ -252,7 +252,7 @@ export default function Tabel() {
                         </TableCell>
                         <TableCell>
                           <div className="flex items-center space-x-2">
-                            <p className="md:h-6 font-semibold">{user.status}</p>
+                            <p className="xl:h-6 font-semibold">{user.status}</p>
                           </div>
                         </TableCell>
                       </TableRow>

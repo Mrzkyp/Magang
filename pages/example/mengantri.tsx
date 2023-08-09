@@ -1,4 +1,6 @@
 import { Alert, Avatar, Button, Card, CardBody, Modal, ModalBody, ModalFooter, ModalHeader } from "@roketid/windmill-react-ui";
+import ModalBPJS from "example/components/ModalAntrian/bpjs";
+import ModalUmum from "example/components/ModalAntrian/umum";
 import RoundIcon from "example/components/RoundIcon";
 import { SuccessIcon } from "icons";
 import Link from "next/link";
@@ -6,11 +8,11 @@ import React, { useState } from "react";
 
 export default function Mengantri() {
 
-  const [showAlert, setShowAlert] = useState(false);
+  // const [showAlert, setShowAlert] = useState(false);
 
-  const toggleAlert = () => {
-    setShowAlert(!showAlert);
-  };
+  // const toggleAlert = () => {
+  //   setShowAlert(!showAlert);
+  // };
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +46,7 @@ export default function Mengantri() {
                     alt=""
                     aria-hidden="true"
                   />
-                  <p className="ml-2">IN</p>
+                  <p className="xl:ml-2">IN</p>
                 </CardBody>
                 <CardBody>
                   <p className="text-xl align-middle">Layanan Panggilan <span className="text-blue-600">+0225 (150) 2225</span></p>
@@ -94,7 +96,6 @@ export default function Mengantri() {
                   src="/assets/img/medical3.png"
                   alt=""></img>
               </div>
-
             </div>
           </div>
           <div className="flex flex-col gap-y-2 px-3 md:w-2/4 md:mb-40 md:h-3/4 text-center">
@@ -103,35 +104,10 @@ export default function Mengantri() {
                 Silahkan Ambil Antrian
               </p>
             </div>
-            <div className="h-full xl:mb-8 w-full rounded-3xl text-white bg-transparent">
-              <p className="text-center text-2xl">Loket Umum</p>
-              <Button className="md:w-4/5 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 hover:from-pink-500 hover:to-red-500 text-white text-xl" onClick={toggleModal}>
-                <p className="font-semibold align-middle text-2xl">klik Disini</p>
-              </Button>
-            </div>
-            <div className="h-full w-full rounded-3xl text-white bg-transparent">
-              <p className="text-center text-2xl">Loket BPJS</p>
-              <Button className="md:w-4/5 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 hover:from-pink-500 hover:to-red-500 text-white text-xl" onClick={toggleModal}>
-                <p className="font-semibold align-middle text-2xl">klik Disini</p>
-              </Button>
-            </div>
+            <ModalUmum />
+            <ModalBPJS />
           </div>
         </div>
-
-        <Modal isOpen={isOpen} onClose={toggleModal}>
-          <ModalHeader className="text-center xl:mb-4">Berhasil Mengambil Antrian</ModalHeader>
-          <ModalBody>
-            <div className="grid place-items-center">
-              <Avatar
-                className="hidden mr-3 md:block xl:mb-4"
-                size="large"
-                src="https://freepngimg.com/download/success/6-2-success-png-image.png"
-                alt=""
-              />
-              <p className="text-center text-4xl font-semibold">A 01</p>
-            </div>
-          </ModalBody>
-        </Modal>
 
         {/* {showAlert && (
           <div

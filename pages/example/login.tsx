@@ -66,7 +66,7 @@ function LoginPage() {
                 <Input
                   className="mt-1"
                   type="password"
-                  placeholder="Password"
+                  placeholder="***************  "
                 />
               </Label>
 

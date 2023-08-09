@@ -128,11 +128,11 @@ function Dashboard() {
 
       <PageTitle>LOKET</PageTitle>
 
-      <div className="grid px-4 gap-6 mb-8 md:grid-cols-2">
+      <div className="grid xl:px-4 xl:gap-4 md:grid-cols-2">
         <ChartCard title="Loket 1">
           <div className="flex">
             <img
-              className="h-full w-full rounded-full"
+              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
               src="/assets/img/Gear5.jpeg"
               alt=""
             />
@@ -141,7 +141,7 @@ function Dashboard() {
         <ChartCard title="Loket 2">
           <div className="flex">
             <img
-              className="h-full w-full rounded-full"
+              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
               src="/assets/img/Gear5.jpeg"
               alt=""
             />
@@ -150,7 +150,7 @@ function Dashboard() {
         <ChartCard title="Loket 3">
           <div className="flex">
             <img
-              className="h-full w-full rounded-full"
+              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
               src="/assets/img/Gear5.jpeg"
               alt=""
             />
@@ -159,7 +159,7 @@ function Dashboard() {
         <ChartCard title="Loket 4">
           <div className="flex">
             <img
-              className="h-full w-full rounded-full"
+              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
               src="/assets/img/Gear5.jpeg"
               alt=""
             />
@@ -168,7 +168,7 @@ function Dashboard() {
         <ChartCard title="Loket 5">
           <div className="flex">
             <img
-              className="h-full w-full rounded-full"
+              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
               src="/assets/img/Gear5.jpeg"
               alt=""
             />
@@ -177,7 +177,7 @@ function Dashboard() {
         <ChartCard title="Loket 6">
           <div className="flex">
             <img
-              className="h-full w-full rounded-full"
+              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
               src="/assets/img/Gear5.jpeg"
               alt=""
             />

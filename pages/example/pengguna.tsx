@@ -29,6 +29,7 @@ import response, { ITableData } from "utils/demo/tableData";
 import Layout from "example/containers/Layout";
 import Link from "next/link";
 import Modal from "example/components/Modal/modal";
+import EditModal from "example/components/Modal/modal.edit";
 // make a copy of the data, for the second table
 const response2 = response.concat([]);
 
@@ -61,23 +62,7 @@ function Pengguna() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<ITableData | null>(null);
 
-  // Fungsi untuk membuka modal "Edit" dan mengatur data pengguna yang akan diedit
-  const openEditModal = (user: ITableData) => {
-    setSelectedUser(user);
-    setIsEditModalOpen(true);
-  };
 
-  // Fungsi untuk menutup modal "Edit"
-  const closeEditModal = () => {
-    setIsEditModalOpen(false);
-  };
-
-  //edit Pengguna
-  const saveEdit = () => {
-    // Implementasi aksi menyimpan perubahan disini, misalnya dengan memanggil fungsi saveData(selectedUser)
-    alert(`Data dengan ID ${selectedUser?.id} telah diubah`);
-    closeEditModal();
-  };
 
   // on page change, load new sliced data
   // here you would make another server request for new data
@@ -145,15 +130,8 @@ function Pengguna() {
                   <Badge type={user.status}>{user.status}</Badge>
                 </TableCell>
                 <TableCell>
-                  <div className="flex md:w-10 items-center space-x-2">
-                    <Button
-                      layout="link"
-                      size="small"
-                      aria-label="Edit"
-                      onClick={() => openEditModal(user)}
-                    >
-                      <EditIcon className="md:w-4 md:h-4" aria-hidden="true" />
-                    </Button>
+                  <div className="flex xl:w-16 items-center space-x-2">
+                    <EditModal />
                     <Button
                       layout="link"
                       size="small"
@@ -170,6 +148,7 @@ function Pengguna() {
               </TableRow>
             ))}
           </TableBody>
+
           <ConfirmationModal
             isOpen={isDeleteModalOpen}
             onClose={() => setIsDeleteModalOpen(false)}
