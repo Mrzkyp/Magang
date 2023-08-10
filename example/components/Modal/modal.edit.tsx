@@ -22,7 +22,7 @@ export default function EditModal() {
   // }
 
   return (
-    <div className="md:px-4 md:py-3">
+    <div className="xl:px-6 xl:py-3">
       <Button
         layout="link"
         size="small"

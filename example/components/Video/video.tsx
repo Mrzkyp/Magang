@@ -3,9 +3,9 @@ import React, { useRef, useEffect } from "react";
 const VideoPlayer: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const videos = [
-    "/assets/img/movie.mp4",
-    "/assets/img/movie2.mp4",
-  
+    "/assets/img/sukun (1).mp4",
+    "/assets/img/sukun (2).mp4",
+
   ];
   const currentVideoIndex = useRef(0);
 

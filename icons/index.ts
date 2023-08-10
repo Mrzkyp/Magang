@@ -29,8 +29,18 @@ import DropdownIcon from "./dropdown.svg";
 import OutlinePersonIcon from "./outlinePerson.svg";
 import OutlineCogIcon from "./outlineCog.svg";
 import OutlineLogoutIcon from "./outlineLogout.svg";
+import ArrowRight from "./arrow_right.svg";
+import CallIcon from "./call.svg";
+import NextIcon from "./next.svg";
+import CloseIcon from "./close.svg";
+import AddIcon from "./add.svg";
 
 export {
+  AddIcon,
+  CloseIcon,
+  NextIcon,
+  CallIcon,
+  ArrowRight,
   SuccessIcon,
   ButtonsIcon,
   CardsIcon,

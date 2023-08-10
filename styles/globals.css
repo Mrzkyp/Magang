@@ -49,3 +49,29 @@ a {
   justify-content: flex-end;
   font-size: 25px;
 }
+
+.marquee-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5vh;
+  overflow: hidden;
+}
+
+.marquee {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

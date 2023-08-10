@@ -4,6 +4,7 @@ interface ITableData {
   name: string;
   time: string;
   email: string;
+  loket:string;
   status: "success" | "danger" | "warning" | "neutral" | "primary" | undefined;
   date: string;
   sisaAntrian: string;
@@ -19,6 +20,7 @@ const tableData: ITableData[] = [
     date: "Mon Nov 25 2019",
     sisaAntrian: "100",
     time: "10:00",
+    loket: "umum",
   },
   {
     id: "02",
@@ -29,6 +31,7 @@ const tableData: ITableData[] = [
     date: "Sun Aug 25 2019",
     sisaAntrian: "100",
     time: "08:00",
+    loket: "umum",
   },
   {
     id: "03",
@@ -39,6 +42,7 @@ const tableData: ITableData[] = [
     date: "Mon Jul 22 2019",
     sisaAntrian: "100",
     time: "9:00",
+    loket: "BPJS",
   },
   {
     id: "04",
@@ -49,6 +53,7 @@ const tableData: ITableData[] = [
     date: "Sat Feb 08 2020",
     sisaAntrian: "100",
     time: "11:00",
+    loket: "umum",
   },
   {
     id: "05",
@@ -59,6 +64,7 @@ const tableData: ITableData[] = [
     date: "Tue Jun 09 2020",
     sisaAntrian: "100",
     time: "13:00",
+    loket: "BPJS",
   },
   {
     id: "06",
@@ -69,6 +75,7 @@ const tableData: ITableData[] = [
     date: "Sun Dec 29 2019",
     sisaAntrian: "100",
     time: "14:00",
+    loket: "BPJS",
   },
   {
     id: "07",
@@ -79,6 +86,7 @@ const tableData: ITableData[] = [
     date: "Sun Dec 29 2019",
     sisaAntrian: "100",
     time: "15:00",
+    loket: "BPJS",
   },
   {
     id: "08",
@@ -89,6 +97,7 @@ const tableData: ITableData[] = [
     date: "Sun Sep 15 2019",
     sisaAntrian: "100",
     time: "16:00",
+    loket: "umum",
   },
   {
     id: "09",
@@ -99,6 +108,7 @@ const tableData: ITableData[] = [
     date: "Tue Dec 17 2019",
     sisaAntrian: "100",
     time: "17.00",
+    loket: "umum",
   },
   {
     id: "09",
@@ -109,6 +119,7 @@ const tableData: ITableData[] = [
     date: "Mon Jun 15 2020",
     sisaAntrian: "100",
     time: "18:00",
+    loket: "umum",
   },
 ];
 

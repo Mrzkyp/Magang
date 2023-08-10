@@ -26,7 +26,7 @@ import {
 import { useEffect, useState } from "react";
 import response, { ITableData } from "utils/demo/tableData";
 import SectionTitle from "example/components/Typography/SectionTitle";
-import Tabel from "example/components/Table/table";
+import Tabel from "example/components/Table/table.antrian";
 
 
 function Antrian() {
@@ -115,7 +115,7 @@ function Antrian() {
             <Avatar onClick={handleRefreshClick}
               className="hidden md:block align-middle items-center"
               size="large"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLqfM-tI_LxAPrZRmxVTw92XxKAxg0N-3-zg&usqp=CAU"
+              src="https://encrypted-tbn0.gstatic.com/images  ?q=tbn:ANd9GcRLqfM-tI_LxAPrZRmxVTw92XxKAxg0N-3-zg&usqp=CAU"
               alt=""
             /><p className="align-middle text-center items-center ml-2">Refresh</p>
           </CardBody>
