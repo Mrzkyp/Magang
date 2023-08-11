@@ -15,7 +15,7 @@ function LoginPage() {
   const imgSource =
     mode === "dark"
       ? "/assets/img/login-office-dark.jpeg"
-      : "/assets/img/login-office-dark.jpg";
+      : "/assets/img/login-office-dark.jpeg";
 
   // State untuk menyimpan nilai pilihan dari select option
   const [selectedRole, setSelectedRole] = useState("admin");
