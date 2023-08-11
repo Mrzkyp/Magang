@@ -34,7 +34,7 @@ export default function Mengantri() {
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <div className="flex xl:h-full flex-col bg-gradient-to-br from-blue-200 to-blue-400 relative">
+      <div className="xl:flex xl:h-full xl:flex-col xl:bg-gradient-to-br from-blue-200 to-blue-400 relative">
         <div className="flex md:flex-row-reverse flex-wrap">
           <div className="flex w-full">
             <header className="w-full">

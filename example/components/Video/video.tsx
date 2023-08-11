@@ -38,7 +38,7 @@ const VideoPlayer: React.FC = () => {
   }, []);
 
   return (
-    <video ref={videoRef} className="md:w-4/4 md:h-full" controls>
+    <video ref={videoRef} className="h-full" controls>
       <source src={videos[currentVideoIndex.current]} type="video/mp4" />
       Your browser does not support the video tag.
     </video>

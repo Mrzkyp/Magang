@@ -73,12 +73,12 @@ function Dashboard() {
       </head>
 
       {/* <!-- Cards --> */}
-      <div className="gap-x-4 flex mb-4 px-4 ">
-        <div className="grid w-3/4 h-13">
+      <div className="gap-x-4 flex mb-4 px-2 xl:px-4">
+        <div className="grid w-3/4 h-13 xl:h-48">
           <Card colored className="text-white bg-blue-600">
             <CardBody>
-              <p className="text-5xl mb-4 font-semibold">
-                Selamat Datang di Aplikasi Antrian PT Applimetis
+              <p className="text-xl xl:text-4xl mb-4 font-semibold">
+                Selamat Datang di Aplikasi Antrian Laboratorium
               </p>
               <Link href="/example/antrian" passHref>
                 <Button size="large">Lihat Antrian</Button>
@@ -86,17 +86,17 @@ function Dashboard() {
             </CardBody>
           </Card>
         </div>
-        <div className="grid w-1/4 h-13">
+        <div className="grid w-1/4 h-13 xl:h-48">
           <Card colored className="text-white bg-blue-600">
             <CardBody>
               <p className="mb-4 text-center text-4xl font-semibold">Halo !!</p>
-              <p className="mb-4 text-center text-7xl">Loket 1</p>
+              <p className="mb-4 text-center text-6xl">Loket 1</p>
             </CardBody>
           </Card>
         </div>
       </div>
 
-      <div className="grid px-4 gap-6 xl:grid-cols-7">
+      <div className="grid px-4 gap-2 xl:grid-cols-7">
         <InfoCard title="Aktif">
           {/* @ts-ignore */}
           <RoundIcon
@@ -128,61 +128,55 @@ function Dashboard() {
 
       <PageTitle>LOKET</PageTitle>
 
-      <div className="grid xl:px-4 xl:gap-4 md:grid-cols-2">
-        <ChartCard title="Loket 1">
-          <div className="flex">
-            <img
-              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
-              src="/assets/img/Gear5.jpeg"
-              alt=""
-            />
-          </div>
-        </ChartCard>
-        <ChartCard title="Loket 2">
-          <div className="flex">
-            <img
-              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
-              src="/assets/img/Gear5.jpeg"
-              alt=""
-            />
-          </div>
-        </ChartCard>
-        <ChartCard title="Loket 3">
-          <div className="flex">
-            <img
-              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
-              src="/assets/img/Gear5.jpeg"
-              alt=""
-            />
-          </div>
-        </ChartCard>
-        <ChartCard title="Loket 4">
-          <div className="flex">
-            <img
-              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
-              src="/assets/img/Gear5.jpeg"
-              alt=""
-            />
-          </div>
-        </ChartCard>
-        <ChartCard title="Loket 5">
-          <div className="flex">
-            <img
-              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
-              src="/assets/img/Gear5.jpeg"
-              alt=""
-            />
-          </div>
-        </ChartCard>
-        <ChartCard title="Loket 6">
-          <div className="flex">
-            <img
-              className="rounded-full xl:mx-14 xl:w-96 xl:h-96 scale-50"
-              src="/assets/img/Gear5.jpeg"
-              alt=""
-            />
-          </div>
-        </ChartCard>
+      <div className="grid w-auto xl:px-4 xl:gap-4 xl:grid-cols-2">
+        <div className="w-auto h-auto">
+          <p className="text-center text-xl text-blue-800"> Loket 1</p>
+          <img
+            className="rounded-full scale-50"
+            src="/assets/img/Gear5.jpeg"
+            alt=""
+          />
+        </div>
+        <div className="w-auto h-auto">
+          <p className="text-center text-xl text-blue-800"> Loket 1</p>
+          <img
+            className="rounded-full scale-50"
+            src="/assets/img/Gear5.jpeg"
+            alt=""
+          />
+        </div>
+        <div className="w-auto h-auto">
+          <p className="text-center text-xl text-blue-800"> Loket 1</p>
+          <img
+            className="rounded-full scale-50"
+            src="/assets/img/Gear5.jpeg"
+            alt=""
+          />
+        </div>
+        <div className="w-auto h-auto">
+          <p className="text-center text-xl text-blue-800"> Loket 1</p>
+          <img
+            className="rounded-full scale-50"
+            src="/assets/img/Gear5.jpeg"
+            alt=""
+          />
+        </div>
+        <div className="w-auto h-auto">
+          <p className="text-center text-xl text-blue-800"> Loket 1</p>
+          <img
+            className="rounded-full scale-50"
+            src="/assets/img/Gear5.jpeg"
+            alt=""
+          />
+        </div>
+        <div className="w-auto h-auto">
+          <p className="text-center text-xl text-blue-800"> Loket 1</p>
+          <img
+            className="rounded-full scale-50"
+            src="/assets/img/Gear5.jpeg"
+            alt=""
+          />
+        </div>
       </div>
     </Layout>
   );

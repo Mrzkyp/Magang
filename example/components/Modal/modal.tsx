@@ -8,23 +8,39 @@ import {
   ModalBody,
   ModalFooter,
   Select,
+  Alert,
 } from "@roketid/windmill-react-ui";
+import { AddIcon } from "icons";
 
 function ModalComponent() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalDefaultOpen, setModalDefaultOpen] = React.useState(false);
+  const [modalNotificationOpen, setModalNotificationOpen] = React.useState(
+    false
+  );
+  const [modalFormOpen, setModalFormOpen] = React.useState(false);
 
-  function openModal() {
-    setIsModalOpen(true);
-  }
+  const openNotificationModal = () => {
+    setModalNotificationOpen(true);
+  };
 
-  function closeModal() {
-    setIsModalOpen(false);
-  }
+  const closeNotificationModal = () => {
+    setModalNotificationOpen(false);
+  };
 
   return (
     <div className="md:px-4 md:py-3 mb-8">
-      <Button onClick={openModal}>Tambah Pengguna</Button>
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
+      <Button
+        layout="link"
+        size="large"
+        aria-label="Edit"
+        onClick={() => setModalDefaultOpen(true)}
+      >
+        <AddIcon className="md:w-4 md:h-4" aria-hidden="true" />
+        <p className="xl:p-2">
+          Tambah Loket
+        </p>
+      </Button>
+      <Modal isOpen={modalDefaultOpen} onClose={() => setModalDefaultOpen(false)}>
         <ModalHeader>Tambah Pengguna</ModalHeader>
         <ModalBody>
           <Label className="mt-4">
@@ -49,11 +65,23 @@ function ModalComponent() {
           </Label>
         </ModalBody>
         <ModalFooter>
-          <Button layout="outline" onClick={closeModal}>
+          <Button layout="outline" onClick={() => setModalDefaultOpen(false)}>
             Cancel
           </Button>
-          <Button layout="primary" onClick={closeModal}>
+          <Button layout="primary" onClick={openNotificationModal}>
             Accept
+          </Button>
+        </ModalFooter>
+      </Modal>
+
+      <Modal isOpen={modalNotificationOpen} onClose={closeNotificationModal}>
+        <ModalHeader>Notifikasi</ModalHeader>
+        <ModalBody>
+          <p>Ini adalah modal notifikasi.</p>
+        </ModalBody>
+        <ModalFooter>
+          <Button layout="primary" onClick={closeNotificationModal}>
+            Tutup
           </Button>
         </ModalFooter>
       </Modal>

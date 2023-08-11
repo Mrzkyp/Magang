@@ -9,61 +9,40 @@ import {
   TableCell,
   TableBody,
   TableRow,
-  TableFooter,
   TableContainer,
-  Badge,
-  Avatar,
   Button,
-  Pagination,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Label,
-  Input,
-  Select,
-  Textarea,
   Card,
   CardBody,
 } from "@roketid/windmill-react-ui";
-import { ArrowRight, CallIcon, CloseIcon, EditIcon, NextIcon, RefreshIcon, SuccessIcon, TrashIcon } from "icons";
+import { ArrowRight, CallIcon, CloseIcon, NextIcon, SuccessIcon, } from "icons";
 
 import response, { ITableData } from "utils/demo/tableData";
-import Layout from "example/containers/Layout";
-import Link from "next/link";
-import Modal from "example/components/Modal/modal";
 // make a copy of the data, for the second table
 const response2 = response.concat([]);
+interface QueueItem {
+  id: number;
+  name: string;
+}
 
 
 export default function Tabel() {
   const [pageTable2, setPageTable2] = useState(1);
-
-  // setup data for every table
-  // const [dataTable1, setDataTable1] = useState<ITableData[]>([]);
   const [dataTable2, setDataTable2] = useState<ITableData[]>([]);
-
-  // pagination setup
   const resultsPerPage = 10;
   const totalResults = response.length;
 
   //Delete Pengguna
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
-  // pagination change control
-  // function onPageChangeTable1(p: number) {
-  //   setPageTable1(p);
-  // }
 
   // pagination change control
-  function onPageChangeTable2(p: number) {
-    setPageTable2(p);
-  }
+  // function onPageChangeTable2(p: number) {
+  //   setPageTable2(p);
+  // }
 
   //Edit Pengguna
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState<ITableData | null>(null);
-
-  // Fungsi untuk membuka modal "Edit" dan mengatur data pengguna yang akan diedit
   const openEditModal = (user: ITableData) => {
     setSelectedUser(user);
     setIsEditModalOpen(true);
@@ -81,19 +60,6 @@ export default function Tabel() {
     closeEditModal();
   };
 
-  // on page change, load new sliced data
-  // here you would make another server request for new data
-  // useEffect(() => {
-  //   setDataTable1(
-  //     response.slice(
-  //       (pageTable1 - 1) * resultsPerPage,
-  //       pageTable1 * resultsPerPage
-  //     )
-  //   );
-  // }, [pageTable1]);
-
-  // on page change, load new sliced data
-  // here you would make another server request for new data
   useEffect(() => {
     setDataTable2(
       response2.slice(
@@ -102,167 +68,181 @@ export default function Tabel() {
       )
     );
   }, [pageTable2]);
+
+  const [queue, setQueue] = useState<QueueItem[]>([]);
+  const [currentCustomer, setCurrentCustomer] = useState<QueueItem | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const enqueueCustomer = () => {
+    const newCustomer: QueueItem = {
+      id: queue.length + 1,
+      name: `Pelanggan ${queue.length + 1}`,
+    };
+    setQueue((prevQueue) => [...prevQueue, newCustomer]);
+  };
+
+  const dequeueCustomer = () => {
+    if (queue.length === 0) {
+      alert("Antrian kosong");
+      return;
+    }
+
+    const [dequeuedCustomer, ...remainingQueue] = queue;
+    setCurrentCustomer(dequeuedCustomer);
+    setQueue(remainingQueue);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentCustomer(null);
+  };
+
   return (
-    <div className="flex xl:ml-0 xl:px-3">
-      <div className="flex flex-col xl:w-3/5 px-1">
-        <Card colored className="h-full text-white bg-blue-200">
-          <CardBody>
-            <p className="text-center text-black">Antrian Terambil</p>
-            <div className="flex">
-              <TableContainer>
-                <Table>
-                  <TableHeader>
-                    <tr>
-                      <TableCell>No Antrian</TableCell>
-                      <TableCell className="text-center">Aksi</TableCell>
-                    </tr>
-                  </TableHeader>
-                  <TableBody>
-                    {dataTable2.map((user, i) => (
-                      <TableRow key={i}>
-                        <TableCell>
-                          <div className="flex items-center text-sm">
-                            <p className="font-semibold">{user.id}</p>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex xl:w-24 items-center space-x-2">
-                            <Button
-                              layout="link"
-                              size="small"
-                              aria-label="Edit"
-                            // onClick={() => openEditModal(user)}
-                            >
-                              <CallIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
-                            </Button>
-                            <Button
-                              layout="link"
-                              size="small"
-                              aria-label="Delete"
-                              onClick={() => {
-                                // setSelectedUserId(user.id);
-                                // setIsDeleteModalOpen(true);
-                              }}
-                            >
-                              <NextIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
-                            </Button>
-                            <Button
-                              layout="link"
-                              size="small"
-                              aria-label="Edit"
-                            // onClick={() => openEditModal(user)}
-                            >
-                              <ArrowRight className="xl:w-4 xl:h-4" aria-hidden="true" />
-                            </Button>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </div>
-          </CardBody>
-        </Card>
+    <div className="flex">
+      <div className="w-3/5 px-2">
+        <p className="text-center text-black">Antrian Terambil</p>
+        <div className="flex">
+          <TableContainer>
+            <Table>
+              <TableHeader>
+                <tr>
+                  <TableCell>No Antrian</TableCell>
+                  <TableCell className="text-center">Aksi</TableCell>
+                </tr>
+              </TableHeader>
+              <TableBody>
+                {dataTable2.map((user, i) => (
+                  <TableRow key={i}>
+                    <TableCell>
+                      <div className="flex items-center text-sm">
+                        <p className="font-semibold">{user.id}</p>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex xl:w-24 items-center space-x-2">
+                        <Button
+                          layout="link"
+                          size="small"
+                          aria-label="Edit"
+                        >
+                          <CallIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                        </Button>
+                        <Button
+                          layout="link"
+                          size="small"
+                          aria-label="Delete"
+                          onClick={() => {
+                          }}
+                        >
+                          <NextIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                        </Button>
+                        <Button
+                          layout="link"
+                          size="small"
+                          aria-label="Edit"
+                        >
+                          <ArrowRight className="xl:w-4 xl:h-4" aria-hidden="true" />
+                        </Button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
       </div>
-      <div className="flex flex-col xl:w-3/5 px-1">
-        <Card colored className="h-full text-white bg-blue-200">
-          <CardBody>
-            <p className="text-center text-black">Antrian Terlewati</p>
-            <div className="flex">
-              <TableContainer>
-                <Table>
-                  <TableHeader>
-                    <tr>
-                      <TableCell>No Antrian</TableCell>
-                      <TableCell className="text-center">Aksi</TableCell>
-                    </tr>
-                  </TableHeader>
-                  <TableBody>
-                    {dataTable2.map((user, i) => (
-                      <TableRow key={i}>
-                        <TableCell>
-                          <div className="flex items-center text-sm">
-                            <p className="font-semibold">{user.id}</p>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex xl:w-24 items-center space-x-2">
-                            <Button
-                              layout="link"
-                              size="small"
-                              aria-label="Edit"
-                            // onClick={() => openEditModal(user)}
-                            >
-                              <CallIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
-                            </Button>
-                            <Button
-                              layout="link"
-                              size="small"
-                              aria-label="Delete"
-                              onClick={() => {
-                                // setSelectedUserId(user.id);
-                                // setIsDeleteModalOpen(true);
-                              }}
-                            >
-                              <SuccessIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
-                            </Button>
-                            <Button
-                              layout="link"
-                              size="small"
-                              aria-label="Delete"
-                              onClick={() => {
-                                // setSelectedUserId(user.id);
-                                // setIsDeleteModalOpen(true);
-                              }}
-                            >
-                              <CloseIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
-                            </Button>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </div>
-          </CardBody>
-        </Card>
+      <div className="w-3/5">
+        <p className="text-center text-black">Antrian Terlewati</p>
+        <div className="flex">
+          <TableContainer>
+            <Table>
+              <TableHeader>
+                <tr>
+                  <TableCell>No Antrian</TableCell>
+                  <TableCell className="text-center">Aksi</TableCell>
+                </tr>
+              </TableHeader>
+              <TableBody>
+                {dataTable2.map((user, i) => (
+                  <TableRow key={i}>
+                    <TableCell>
+                      <div className="flex items-center text-sm">
+                        <p className="font-semibold">{user.id}</p>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex xl:w-24 items-center space-x-2">
+                        <Button
+                          layout="link"
+                          size="small"
+                          aria-label="Edit"
+                        // onClick={() => openEditModal(user)}
+                        >
+                          <CallIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                        </Button>
+                        <Button
+                          layout="link"
+                          size="small"
+                          aria-label="Delete"
+                          onClick={() => {
+                            // setSelectedUserId(user.id);
+                            // setIsDeleteModalOpen(true);
+                          }}
+                        >
+                          <SuccessIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                        </Button>
+                        <Button
+                          layout="link"
+                          size="small"
+                          aria-label="Delete"
+                          onClick={() => {
+                            // setSelectedUserId(user.id);
+                            // setIsDeleteModalOpen(true);
+                          }}
+                        >
+                          <CloseIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                        </Button>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
       </div>
-      <div className="flex flex-col xl:w-3/5 px-1">
-        <Card colored className="h-full text-white bg-blue-200">
-          <CardBody>
-            <p className="text-center text-black">Status Antrian</p>
-            <div className="flex">
-              <TableContainer>
-                <Table>
-                  <TableHeader>
-                    <tr>
-                      <TableCell>No Antrian</TableCell>
-                      <TableCell className="text-start">Status</TableCell>
-                    </tr>
-                  </TableHeader>
-                  <TableBody>
-                    {dataTable2.map((user, i) => (
-                      <TableRow key={i}>
-                        <TableCell>
-                          <div className="flex items-center text-sm">
-                            <p className="font-semibold">{user.id}</p>
-                          </div>
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex items-center space-x-2">
-                            <p className="xl:h-6 font-semibold">{user.status}</p>
-                          </div>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </div>
-          </CardBody>
-        </Card>
+      <div className="w-3/5 px-2">
+        <p className="text-center text-black">Status Antrian</p>
+        <div className="flex">
+          <TableContainer>
+            <Table>
+              <TableHeader>
+                <tr>
+                  <TableCell>No Antrian</TableCell>
+                  <TableCell className="text-start">Status</TableCell>
+                </tr>
+              </TableHeader>
+              <TableBody>
+                {dataTable2.map((user, i) => (
+                  <TableRow key={i}>
+                    <TableCell>
+                      <div className="flex items-center text-sm">
+                        <p className="font-semibold">{user.id}</p>
+                      </div>
+                    </TableCell>
+                    <TableCell>
+                      <div className="flex items-center space-x-2">
+                        <p className="xl:h-6 font-semibold">{user.status}</p>
+                      </div>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
       </div>
     </div >
   )

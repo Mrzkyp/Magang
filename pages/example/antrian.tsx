@@ -56,68 +56,68 @@ function Antrian() {
       </head>
 
       {/* isi card */}
-      <div className="flex xl:px-3 xl:gap-6 items-center xl:mb-4 xl:grid-cols-4 xl:mt-4">
+      <div className="flex px-3 gap-2 mb-4 grid-cols-2 xl:px-3 xl:gap-6 items-center xl:mb-4 xl:grid-cols-4 xl:mt-4">
         <div className="xl:gap-5 items-center">
-          <Card colored className="h-2/4 xl:mb-6 text-white bg-blue-300">
+          <Card colored className="h-2/4 xl:mb-6 mb-2 text-white bg-blue-300">
             <CardBody>
-              <p className="text-2xl text-center xl:mb-4 font-bold">
+              <p className="text-sm xl:text-2xl text-center mb-2 xl:mb-4 font-bold">
                 Jumlah Antrian
               </p>
-              <p className="text-5xl text-center">36</p>
+              <p className="text-LG xl:text-5xl text-center">36</p>
             </CardBody>
           </Card>
           <Card colored className="xl:gap-5 text-white bg-blue-300">
             <CardBody>
-              <p className="text-center text-2xl xl:mb-4 font-bold">
+              <p className="text-center text-sm xl:text-2xl xl:mb-4 font-bold">
                 Sisa Antrian
               </p>
-              <p className="text-center text-5xl">25</p>
+              <p className="text-center text-lg xl:text-5xl">25</p>
             </CardBody>
           </Card>
         </div>
         <div className="xl:gap-52 flex items-center">
           <Card colored className="text-white bg-blue-300">
             <CardBody>
-              <p className="text-center text-3xl mb-4 font-semibold">
+              <p className="text-center text-sm xl:text-3xl mb-2 xl:mb-4 font-semibold">
                 Antrian Sekarang
               </p>
-              <p className="text-center text-6xl">01</p>
+              <p className="text-center text-lg xl:text-6xl">01</p>
             </CardBody>
           </Card>
         </div>
         <div className="xl:gap-52 flex items-center">
           <Card colored className="text-white bg-blue-300">
             <CardBody>
-              <p className="mb-4 text-center text-3xl font-semibold">
+              <p className="mb-2 xl:mb-4 text-center text-sm xl:text-3xl font-semibold">
                 Antrian Selanjutnya
               </p>
-              <p className="text-center text-6xl">02</p>
+              <p className="text-center text-lg xl:text-6xl">02</p>
             </CardBody>
           </Card>
         </div>
         <div className="xl:gap-52 flex items-center">
           <Card colored className=" text-white bg-blue-300">
             <CardBody>
-              <p className="text-center text-3xl xl:mb-4 font-semibold">
+              <p className="text-center text-sm mb-2 xl:text-3xl xl:mb-4 font-semibold">
                 Selamat Datang
               </p>
-              <p className="text-center text-6xl">Dzikri</p>
+              <p className="text-center text-lg xl:text-6xl">Dzikri</p>
             </CardBody>
           </Card>
         </div>
       </div>
 
       {/* Refresh */}
-      <div className="xl:grid xl:px-5 xl:mb-4 xl:grid-cols-12">
+      <div className="grid px-2 xl:px-5 mb-2 xl:mb-4 grid-cols-7 xl:grid-flow-col-8">
 
-        <Card colored className="flex md:h-16 xl:w-44 justify-between bg-transparent">
+        <Card colored className="flex md:h-16 xl:w-32 justify-between bg-transparent">
           <CardBody className="flex">
             <Avatar onClick={handleRefreshClick}
-              className="hidden md:block align-middle items-center"
+              className="hidden md:block scale:50 xl:scale-75 items-center"
               size="large"
-              src="https://encrypted-tbn0.gstatic.com/images  ?q=tbn:ANd9GcRLqfM-tI_LxAPrZRmxVTw92XxKAxg0N-3-zg&usqp=CAU"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLqfM-tI_LxAPrZRmxVTw92XxKAxg0N-3-zg&usqp=CAU"
               alt=""
-            /><p className="align-middle text-center items-center ml-2">Refresh</p>
+            /><p className="text-center items-center ml-2">Refresh</p>
           </CardBody>
         </Card>
       </div>
