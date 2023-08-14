@@ -73,26 +73,6 @@ export default function Tabel() {
   const [currentCustomer, setCurrentCustomer] = useState<QueueItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const enqueueCustomer = () => {
-    const newCustomer: QueueItem = {
-      id: queue.length + 1,
-      name: `Pelanggan ${queue.length + 1}`,
-    };
-    setQueue((prevQueue) => [...prevQueue, newCustomer]);
-  };
-
-  const dequeueCustomer = () => {
-    if (queue.length === 0) {
-      alert("Antrian kosong");
-      return;
-    }
-
-    const [dequeuedCustomer, ...remainingQueue] = queue;
-    setCurrentCustomer(dequeuedCustomer);
-    setQueue(remainingQueue);
-    setIsModalOpen(true);
-  };
-
   const closeModal = () => {
     setIsModalOpen(false);
     setCurrentCustomer(null);
@@ -120,13 +100,13 @@ export default function Tabel() {
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex xl:w-24 items-center space-x-2">
+                      <div className="flex xl:w-24 2xl:w-6 items-center space-x-2">
                         <Button
                           layout="link"
                           size="small"
                           aria-label="Edit"
                         >
-                          <CallIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                          <CallIcon className="xl:w-4 xl:h-4 2xl:w-4" aria-hidden="true" />
                         </Button>
                         <Button
                           layout="link"
@@ -135,14 +115,14 @@ export default function Tabel() {
                           onClick={() => {
                           }}
                         >
-                          <NextIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                          <NextIcon className="xl:w-4 xl:h-4 2xl:w-4" aria-hidden="true" />
                         </Button>
                         <Button
                           layout="link"
                           size="small"
                           aria-label="Edit"
                         >
-                          <ArrowRight className="xl:w-4 xl:h-4" aria-hidden="true" />
+                          <ArrowRight className="xl:w-4 xl:h-4 2xl:w-4" aria-hidden="true" />
                         </Button>
                       </div>
                     </TableCell>
@@ -173,14 +153,14 @@ export default function Tabel() {
                       </div>
                     </TableCell>
                     <TableCell>
-                      <div className="flex xl:w-24 items-center space-x-2">
+                      <div className="flex xl:w-24 2xl:w-6 items-center space-x-2">
                         <Button
                           layout="link"
                           size="small"
                           aria-label="Edit"
                         // onClick={() => openEditModal(user)}
                         >
-                          <CallIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                          <CallIcon className="xl:w-4 xl:h-4 2xl:w-4" aria-hidden="true" />
                         </Button>
                         <Button
                           layout="link"
@@ -191,7 +171,7 @@ export default function Tabel() {
                             // setIsDeleteModalOpen(true);
                           }}
                         >
-                          <SuccessIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                          <SuccessIcon className="xl:w-4 xl:h-4 2xl:w-4" aria-hidden="true" />
                         </Button>
                         <Button
                           layout="link"
@@ -202,7 +182,7 @@ export default function Tabel() {
                             // setIsDeleteModalOpen(true);
                           }}
                         >
-                          <CloseIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
+                          <CloseIcon className="xl:w-4 xl:h-4 2xl:w-4" aria-hidden="true" />
                         </Button>
                       </div>
                     </TableCell>

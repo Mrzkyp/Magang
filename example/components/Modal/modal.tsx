@@ -28,14 +28,14 @@ function ModalComponent() {
   };
 
   return (
-    <div className="md:px-4 md:py-3 mb-8">
+    <div className="px-2 py-1 xl:px-4 xl:py-3 mb-8">
       <Button
         layout="link"
         size="large"
         aria-label="Edit"
         onClick={() => setModalDefaultOpen(true)}
       >
-        <AddIcon className="md:w-4 md:h-4" aria-hidden="true" />
+        <AddIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
         <p className="xl:p-2">
           Tambah Loket
         </p>

@@ -22,7 +22,7 @@ export default function Loket() {
   // }
 
   return (
-    <div className="xl:px-6 xl:py-3">
+    <div className="xl:px-6 px-2 py-2 xl:py-3">
       <Button
         layout="link"
         size="large"

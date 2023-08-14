@@ -114,7 +114,7 @@ function Pengguna() {
                 <TableCell>
                   <div className="flex items-center text-sm">
                     <Avatar
-                      className="hidden mr-3 md:block"
+                      className="hidden mr-3 xl:block"
                       src={user.avatar}
                       alt="User avatar"
                     />
@@ -141,7 +141,7 @@ function Pengguna() {
                         setIsDeleteModalOpen(true);
                       }}
                     >
-                      <TrashIcon className="md:w-4 md:h-4" aria-hidden="true" />
+                      <TrashIcon className="xl:w-4 xl:h-4" aria-hidden="true" />
                     </Button>
                   </div>
                 </TableCell>

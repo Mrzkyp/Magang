@@ -21,22 +21,22 @@ export default function ModalBPJS() {
   return (
     <div>
       <div className="h-full xl:mb-8 w-full rounded-3xl text-white bg-transparent">
-        <p className="text-center text-2xl">Loket BPJS</p>
-        <Button className="md:w-4/5 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 hover:from-pink-500 hover:to-red-500 text-white text-xl" onClick={toggleModal}>
-          <p className="font-semibold align-middle text-2xl">klik Disini</p>
+        <p className="text-center xl:text-2xl 2xl:text-5xl">Loket BPJS</p>
+        <Button className="xl:w-4/5 h-1/5 2xl:w-10/12 2xl:h-3/5 rounded-full bg-gradient-to-r from-blue-500 to-blue-400 hover:from-pink-500 hover:to-red-500 text-white text-xl" onClick={toggleModal}>
+          <p className="font-semibold align-middle xl:text-2xl 2xl:text-5xl">klik Disini</p>
         </Button>
       </div>
       <Modal isOpen={isOpen} onClose={toggleModal}>
-        <ModalHeader className="text-center xl:mb-4">Berhasil Mengambil Antrian BPJS</ModalHeader>
+        <ModalHeader className="text-center xl:mb-4 2xl:mb-6 2xl:text-3xl">Berhasil Mengambil Antrian BPJS</ModalHeader>
         <ModalBody>
-          <div className="grid place-items-center">
+          <div className="grid place-items-center ">
             <Avatar
               className="hidden mr-3 md:block xl:mb-4"
               size="large"
               src="https://freepngimg.com/download/success/6-2-success-png-image.png"
               alt=""
             />
-            <p className="text-center text-4xl font-semibold">A 01</p>
+            <p className="text-center text-4xl font-semibold 2xl:text-6xl">A 01</p>
           </div>
         </ModalBody>
       </Modal>
