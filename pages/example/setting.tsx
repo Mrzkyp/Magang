@@ -27,13 +27,14 @@ import { EditIcon, PeopleIcon, TrashIcon } from "icons";
 
 import response, { ITableData } from "utils/demo/tableData";
 import Layout from "example/containers/Layout";
-import Link from "next/link";
-import Modal from "example/components/Modal/modal";
-import EditModal from "example/components/Modal/modal.edit";
-import Display from "example/components/Display/display";
-import RoundIcon from "example/components/RoundIcon";
+// import Link from "next/link";
+// import Modal from "example/components/Modal/modal";
+// import EditModal from "example/components/Modal/modal.edit";
+// import Display from "example/components/Display/display";
+// import RoundIcon from "example/components/RoundIcon";
 import Loket from "example/components/Modal/modal.loket";
-import LoketAdd from "example/components/Modal/modal.add";
+import LoketAdd, { Loket2 } from "example/components/Modal/modal.add";
+
 // make a copy of the data, for the second table
 const response2 = response.concat([]);
 

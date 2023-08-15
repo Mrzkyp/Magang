@@ -3,6 +3,12 @@ import { AddIcon, EditIcon } from "icons";
 import React from "react";
 import { useState } from "react";
 
+export function Loket2() {
+  return (
+    <p></p>
+  )
+}
+
 export default function Loket() {
   const [modalDefaultOpen, setModalDefaultOpen] = React.useState(false);
   const [modalNotificationOpen, setModalNotificationOpen] = React.useState(

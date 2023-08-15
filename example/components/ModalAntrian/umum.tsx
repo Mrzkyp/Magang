@@ -13,10 +13,16 @@ import {
 
 export default function ModalUmum() {
   const [isOpen, setIsOpen] = useState(false);
+  const [count, setCount] = useState(0);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
+    setCount(count + 1);
   };
+
+  const closeModal = () => {
+    setIsOpen(!isOpen);
+  }
 
   return (
     <div>
@@ -26,7 +32,7 @@ export default function ModalUmum() {
           <p className="font-semibold align-middle xl:text-2xl 2xl:text-5xl">klik Disini</p>
         </Button>
       </div>
-      <Modal isOpen={isOpen} onClose={toggleModal}>
+      <Modal isOpen={isOpen} onClose={closeModal}>
         <ModalHeader className="text-center xl:mb-4 2xl:mb-6 2xl:text-3xl">Berhasil Mengambil Antrian Umum</ModalHeader>
         <ModalBody>
           <div className="grid place-items-center">
@@ -36,7 +42,7 @@ export default function ModalUmum() {
               src="https://freepngimg.com/download/success/6-2-success-png-image.png"
               alt=""
             />
-            <p className="text-center text-4xl 2xl:text-6xl font-semibold">A 01</p>
+            <p className="text-center text-4xl 2xl:text-6xl font-semibold">A {count}</p>
           </div>
         </ModalBody>
       </Modal>

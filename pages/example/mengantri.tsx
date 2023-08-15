@@ -71,10 +71,10 @@ export default function Mengantri() {
                   alt=""
                   aria-hidden="true"
                 />
-                <p className="text-lg 2xl:text-5xl 2xl:mb-7 font-semibold">Selamat Datang Di PT.Applimetis Parama Solusi Bekasi</p>
+                <p className="text-lg 2xl:text-5xl xl:text-3xl 2xl:mb-7 font-semibold">Selamat Datang Di PT.Applimetis Parama Solusi Bekasi</p>
               </CardBody>
               <CardBody>
-                <p className="w-full 2xl:text-3xl text-sm pl-32">Kami adalah Tim Profesional yang terdiri dari Pengembang berbakat untuk membuat Solusi Perangkat Lunak yang Komprehensif</p>
+                <p className="w-full 2xl:text-3xl xl:text-xl text-sm pl-32">Kami adalah Tim Profesional yang terdiri dari Pengembang berbakat untuk membuat Solusi Perangkat Lunak yang Komprehensif</p>
               </CardBody>
             </Card>
           </div>
